@@ -39,7 +39,7 @@
 
 
   <!-- 2)reset.css 초기화 : 브라우저가 가진 여백을포함한 기본스타일 및 .css파일의 기존스타일들을 없에고 초기화-->
-  <link rel="stylesheet" href="css/reset.css"> --> -->
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> 
 
   <!-- 1) https://fonts.google.com/ 구글폰트 홈피를 사용한 link 와 css 속성 연결후 hello world 를 body안에 넣어 폰트체크--> 
@@ -48,78 +48,103 @@
 
 </head>
 <body>
-    <!--HEADER-->
-  <header class="section">
-    <div class="inner clearfix">
-      <!--BEM : css 작명규칙
-        1. a__b a의 일부분인 b라는 의미 (언더바 2개)
-        2. c--d c의 상태는 d라는 의미 (대쉬를 2번) -->
-          
-      <div class="menu-group float--left">
-        <div class="logo">
-          <a href="#">Github</a>
+        <!--HEADER-->
+      <header class="section">
+        <div class="inner clearfix">
+          <!--BEM : css 작명규칙
+            1. a__b a의 일부분인 b라는 의미 (언더바 2개)
+            2. c--d c의 상태는 d라는 의미 (대쉬를 2번) -->
+              
+          <div class="menu-group float--left">
+            <div class="logo">
+              <a href="#">Github</a>
+            </div>
+
+            <ul class="main-menu toggle">
+              <li><a href="#">Personal</a></li>
+              <li><a href="#">Open source</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Explore</a></li>
+            </ul>
+          </div>
+
+          <div class="sign-group float--right toggle">
+            <!-- 상단메뉴 왼쪽에서 오른쪽으로 순서 안바꿔도 됨 / 반응형에서 어차피 순서 엉킴  -->
+            <div class="btn-group">
+              <!-- div가 아니라 a인 이유 : 버튼 클릭하면 다른 페이지로 넘어가게끔 -->
+              <a class="btn sign-in" href="#">Sign in</a>
+              <a class="btn btn--primary sign-up" href="#">Sign up</a>
+            </div>
+
+            <form id="search-form" method="post" action="">
+              <!-- form 넣는 이유 = input 창의 사용자가 데이터값을 넣었을 때 데이터가 백엔드랑 연결되는 지점으로서 역할을 하기 때문 -->
+              <input id="search" class="input--text" type="text" placeholder="Search GitHub">
+              <input type="submit"> <!-- submit 단추 css파일 168번째줄에서 안보이게 설정 : 
+                #search + [type="submit"] { display: none; } 
+              -->
+            </form>
+
+            <ul class="sub-menu">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </header>
+
+
+      <!--VISUAL-->
+      <section class="section section--visual">
+      <div class="inner">
+
+        <!-- visual 좌측 텍스트영역 - flexible 하게 !  -->
+        <div class="summary"> 
+          <div class="summary__title">How&nbsp;people build&nbsp;software</div>
+          <div class="summary__description">Millions of developers use GitHub to build personal projects, support their
+            businesses, and&nbsp;work together on open source technologies.</div>
         </div>
 
-        <ul class="main-menu toggle">
-          <li><a href="#">Personal</a></li>
-          <li><a href="#">Open source</a></li>
-          <li><a href="#">Business</a></li>
-          <li><a href="#">Explore</a></li>
-        </ul>
-      </div>
-
-      <div class="sign-group float--right toggle">
-        <div class="btn-group">
-          <a class="btn sign-in" href="#">Sign in</a>
-          <a class="btn btn--primary sign-up" href="#">Sign up</a>
-        </div>
-
-        <form id="search-form" method="post" action="">
-          <input id="search" class="input--text" type="text" placeholder="Search GitHub">
-          <input type="submit"> <!-- submit 단추 css파일 168번째줄에서 안보이게 설정 : 
-            #search + [type="submit"] { display: none; } 
-          -->
+        <!-- visual 우측 가입form 영역 - fix 하게 ! -->
+        <form id="sign-form" method="post" action="">
+          <ul>
+            <li><input class="input--text" type="text" placeholder="Pick a username"></li>
+            <li><input class="input--text" type="email" placeholder="Your email address"></li>
+            <li>
+              <input class="input--text" type="password" placeholder="Create a password">
+              <p class="caption">Use at least one letter, one numeral, and seven characters.</p>
+            </li>
+            <li>
+              <button class="btn btn--primary" type="submit">Sign up for GitHub</button>
+              <p class="caption">By clicking "Sign up for GitHub", you agree to our terms of service and privacy policy.
+                We'll occasionally send you account related emails.</p>
+            </li>
+          </ul>
         </form>
+      </section>
 
-        <ul class="sub-menu">
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </div>
+      <!-- FEATURE -->
+      <section class="section section--feature">
+        <div class="summary">
+          
+        </div>
 
-    </div>
-  </header>
+        <div class="video">
+          <iframe width="520" height="293" src="" frameborder="0"></iframe>
 
-    <!--VISUAL-->
-    <section class="section section--visual">
-    <div class="inner">
+        </div>
 
-      <!-- visual 좌측 텍스트영역 - flexible 하게 !  -->
-      <div class="summary"> 
-        <div class="summary__title">How&nbsp;people build&nbsp;software</div>
-        <div class="summary__description">Millions of developers use GitHub to build personal projects, support their
-          businesses, and&nbsp;work together on open source technologies.</div>
-      </div>
+        <div class="tiles">
 
-      <!-- visual 우측 가입form 영역 - fix 하게 ! -->
-      <form id="sign-form" method="post" action="">
-        <ul>
-          <li><input class="input--text" type="text" placeholder="Pick a username"></li>
-          <li><input class="input--text" type="email" placeholder="Your email address"></li>
-          <li>
-            <input class="input--text" type="password" placeholder="Create a password">
-            <p class="caption">Use at least one letter, one numeral, and seven characters.</p>
-          </li>
-          <li>
-            <button class="btn btn--primary" type="submit">Sign up for GitHub</button>
-            <p class="caption">By clicking "Sign up for GitHub", you agree to our terms of service and privacy policy.
-              We'll occasionally send you account related emails.</p>
-          </li>
-        </ul>
-      </form>
 
-    
+        </div>
+
+
+
+
+      </section>
+
     </div>
     </body>
     </html>

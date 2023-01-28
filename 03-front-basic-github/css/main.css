@@ -11,7 +11,7 @@
     background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
     border: 1px solid #d5d5d5;
     border-radius: 4px;
-    display: inline-flex;/* flex는 블록처럼 가로전체차지, inline-flex; s는 글자크기만큼 가로크기 조절 */
+    display: inline-flex;/* flex는 블록처럼 가로전체차지 가로배치, inline-flex; s는 글자크기만큼 가로크기 조절 */
     align-items: center; /* *수직 가운데 정렬*/
     padding: 0 12px; /* 가로크기조절을위한방법으로 padding과 display:inline-flex;를 사용 / padding은 위아래 여백은 없고 , 좌우여백만 12px로 설정 */
     font-size: 14px;
@@ -92,6 +92,7 @@ a {
 
 /* SUMMARY */
 .summary{
+
 }
 
 .summary__title {
@@ -164,7 +165,9 @@ header .sign-group {
   align-items: center;
   height: 100%;
 }
+
 header .btn-group {
+  /* order = web에서 순서대로 보여주게하는 속성부여 (배열처럼 0이 첫번째임) */
   order: 2;
   display: flex;
 }
@@ -172,6 +175,7 @@ header .btn-group .sign-in {
   margin-right: 4px;
 }
 #search-form {
+  /* order 코딩순서대로 안돼있어도 order를 통해 순서 속성 부여 */
   order: 1;
   margin-right: 12px;
 }
@@ -179,6 +183,8 @@ header .btn-group .sign-in {
   width: 160px;
   font-size: 14px;
 }
+/* '+' 는 얘랑 인접한 요소를 pick
+   그리고 []를 활용해 특정시킴 = 2번쨰 input  */
 #search + [type="submit"] {
   display: none;
 }
@@ -188,13 +194,89 @@ header .sub-menu {
   display: flex;
 }
 header .sub-menu li a {
+  /* a태그에는 display : block 안하면 inline속성이라서 padding, border 등이 적용이 안됨 
+     li가아니라 a에다가 줘야 적용이 됨 - li는 품목을 열거하는 것 뿐, 관련있는건 a태그임*/
   padding: 8px;
   color: #3c4146;
   font-size: 13px;
   display: block;
 }
 header .sub-menu li a:hover {
+  /* hover = 마우스를 올렸을 때 변화가 일어나는 것 */
   color: #4078c0;
 }
 
 /* VISUAL */
+.section--visual{
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  /* 배경사진이 바둑판처럼 반복되는것을 방지 */
+  background-position: bottom left;
+}
+
+.section--visual .inner{
+  max-width: 980;
+  /* 브라우저 줄였을 때 최대크기가 980px 이라는 뜻 */
+  margin: 0 auto;
+  /* margin : 가운데 정렬 할때 자주 씀, 순서가 상하 0 좌우 auto */
+  padding: 160px 0;
+  /* 배경이미지 크기 조절 */
+  display: flex;
+}
+
+.section--visual .summary{
+  /* 비율을 조절해주는 속성 */
+  flex: 1;
+  margin-right: 90px;
+
+}
+
+.section--visual .summary__title{
+  font-size: 54px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+               0 1px 25px rgba(0, 0, 0, .75) ;
+}
+
+.section--visual .summary__description{
+  font-size: 20px;
+  width: 500px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+               0 1px 25px rgba(0, 0, 0, .75) ;
+}
+
+#sign--form{
+  width: 340px;
+  margin-top: 16px;
+
+}
+
+#sign-form li{
+  margin-bottom: 14px;
+}
+
+#sign-form li:last-child{
+  margin-bottom: 0px;
+}
+
+#sign-form .input--text{
+  width: 100%;
+  height: 50px;
+}
+
+#sign-form .caption{
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, .6);
+  line-height: 1.5;
+  text-align: center;
+}
+
+#sign-form [type="submit"]{
+  width: 100%;
+  height: 60px;
+  padding: 0 25px;
+  font-size: 18px;
+  justify-content: center;
+}
