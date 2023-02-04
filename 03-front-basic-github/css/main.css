@@ -11,7 +11,7 @@
     background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
     border: 1px solid #d5d5d5;
     border-radius: 4px;
-    display: inline-flex;/* flex는 블록처럼 가로전체차지 가로배치, inline-flex; s는 글자크기만큼 가로크기 조절 */
+    display: flex;/* flex는 블록처럼 가로전체차지 가로배치, inline-flex; s는 글자크기만큼 가로크기 조절 */
     align-items: center; /* *수직 가운데 정렬*/
     padding: 0 12px; /* 가로크기조절을위한방법으로 padding과 display:inline-flex;를 사용 / padding은 위아래 여백은 없고 , 좌우여백만 12px로 설정 */
     font-size: 14px;
@@ -204,6 +204,10 @@ header .sub-menu li a {
 header .sub-menu li a:hover {
   /* hover = 마우스를 올렸을 때 변화가 일어나는 것 */
   color: #4078c0;
+}
+
+#toggle-btn{
+  text-indent: -9999px ;
 }
 
 /* VISUAL */
@@ -455,3 +459,149 @@ header .sub-menu li a:hover {
   font-size: 22px;
   font-weight: 300;
 }
+
+/* FOOTER */
+footer .inner{
+  padding: 50px 0;
+  border-top: 10px solid #eee;
+}
+
+footer .site-links{
+  /* flex 가로로 열거함 */
+  display: flex;
+}
+
+footer .site-links li{
+  font-size: 12px;
+  margin-right: 10px;
+  color: #767676;
+}
+
+footer .site-links li a{
+  color: #4078c0;
+}
+
+footer .site-links li a:hover{
+  text-decoration: underline;
+}
+
+footer .logo{
+  /* 감싸고있는 부모태그 기준으로 이동하는 속성 = INNER LEFT / RIGHT 에 있는
+  inner를 기준으로 함 */
+  position: absolute;
+  /* 전체 잡아주는 방법 : 네 방향을 0으로 설정 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* svg 크기설정 */
+  width: 24px;
+  height: 24px;
+
+}
+
+footer .logo:hover svg{
+  fill: #4078c0;
+}
+
+/* 브라우저 midium 사이즈에서의 css */
+/* MEDIA */
+@media(max-width: 1024px){
+  /* header다음 .section이 왜 붙어서 해야 작동..?
+  class속성으로 바로 붙어서 그런듯? */
+  header.section .inner{
+    max-width: none;
+    height: auto;
+    padding: 0 20px;
+  }
+
+  header .menu-group,
+  header .sign-group{
+    float:none;
+  }
+
+  header .logo{
+    padding: 12px 0;
+  }
+
+  header .menu-group{
+    display: block;
+  }
+
+  header .main-menu{
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  header .main-menu li{
+    border-top: 1px solid #e5e5e5;
+  }
+
+  header .main-menu li a{
+    padding: 16px 0;
+  }
+
+  /* sign gruop(right) */
+
+  header .sign-group{
+    display: block;
+    padding: 10px 0 20px;
+  }
+
+  header .btn-group{
+    display: block;
+  }
+
+  header .btn-group .btn{
+    justify-content: center;
+  }
+
+  header .btn-group .sign-in{
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  #search-form{
+    margin-top: 12px;
+    margin-right: 0px;
+  }
+
+  #search{
+    width: 100%;
+    height: 42px;
+    text-align: center;
+  }
+
+  header .sub-menu{
+    margin-top: 12px;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  header .toggle{
+    display: none;
+  }
+
+  /* html에 on이라는 클래스 명은 없음. 마치 있는 것처럼 작동하게함 - js와 관련 */
+  header .togle.on{
+    display: block;
+  }
+
+  #toggle-btn{
+    /* block 세로로 보이게함 */
+    display: block;
+    background: url("../img/toggle-btn.svg");
+    width: 18px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    cursor: pointer;
+    text-indent: -9999px ;
+  }
+}
+
+
+
+
