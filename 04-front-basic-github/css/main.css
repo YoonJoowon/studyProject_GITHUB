@@ -212,6 +212,7 @@ header .sub-menu li a:hover {
 
 /* VISUAL */
 .section--visual{
+  position: relative;
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
   /* 배경사진이 바둑판처럼 반복되는것을 방지 */
@@ -240,60 +241,48 @@ header .sub-menu li a:hover {
   display: flex;
 }
 
-.section--visual .summary{
-  /* 비율을 조절해주는 속성 */
+.section--visual .summary {
   flex: 1;
   margin-right: 90px;
-
 }
-
-.section--visual .summary__title{
+.section--visual .summary__title {
   font-size: 54px;
   color: #fff;
+  /* text-shadow: X Y BLUR COLOR; */
   text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
-               0 1px 25px rgba(0, 0, 0, .75) ;
+  0 1px 25px rgba(0, 0, 0, .75);
 }
-
-.section--visual .summary__description{
-  font-size: 20px;
-  width: 500px;
+.section--visual .summary__description {
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
-               0 1px 25px rgba(0, 0, 0, .75) ;
+  0 1px 25px rgba(0, 0, 0, .75);
 }
-
-#sign--form{
+#sign-form {
   width: 340px;
   margin-top: 16px;
-
 }
-
-#sign-form li{
-  margin-bottom: 14px;
+#sign-form li {
+  margin-bottom: 17px;
 }
-
-#sign-form li:last-child{
-  margin-bottom: 0px;
+#sign-form li:last-child {
+  margin-bottom: 0;
 }
-
-#sign-form .input--text{
+#sign-form .input--text {
   width: 100%;
-  height: 50px;
+  height: 40px;
 }
-
-#sign-form .caption{
+#sign-form .caption {
   font-size: 12px;
   margin-top: 5px;
   color: rgba(255, 255, 255, .6);
   line-height: 1.5;
   text-align: center;
 }
-
-#sign-form [type="submit"]{
+#sign-form [type="submit"] {
   width: 100%;
-  height: 60px;
+  height: 62px;
   padding: 0 25px;
-  font-size: 18px;
+  font-size: 20px;
   justify-content: center;
 }
 
@@ -504,104 +493,6 @@ footer .logo{
 footer .logo:hover svg{
   fill: #4078c0;
 }
-
-/* 브라우저 midium 사이즈에서의 css */
-/* MEDIA */
-@media(max-width: 1024px){
-  /* header다음 .section이 왜 붙어서 해야 작동..?
-  class속성으로 바로 붙어서 그런듯? */
-  header.section .inner{
-    max-width: none;
-    height: auto;
-    padding: 0 20px;
-  }
-
-  header .menu-group,
-  header .sign-group{
-    float:none;
-  }
-
-  header .logo{
-    padding: 12px 0;
-  }
-
-  header .menu-group{
-    display: block;
-  }
-
-  header .main-menu{
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  header .main-menu li{
-    border-top: 1px solid #e5e5e5;
-  }
-
-  header .main-menu li a{
-    padding: 16px 0;
-  }
-
-  /* sign gruop(right) */
-
-  header .sign-group{
-    display: block;
-    padding: 10px 0 20px;
-  }
-
-  header .btn-group{
-    display: block;
-  }
-
-  header .btn-group .btn{
-    justify-content: center;
-  }
-
-  header .btn-group .sign-in{
-    margin-right: 0;
-    margin-bottom: 12px;
-  }
-
-  #search-form{
-    margin-top: 12px;
-    margin-right: 0px;
-  }
-
-  #search{
-    width: 100%;
-    height: 42px;
-    text-align: center;
-  }
-
-  header .sub-menu{
-    margin-top: 12px;
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  header .toggle{
-    display: none;
-  }
-
-  /* html에 on이라는 클래스 명은 없음. 마치 있는 것처럼 작동하게함. on은 보여줬다 안보여줬다 함 - js와 관련 */
-  header .toggle.on{
-    display: block;
-  }
-
-  #toggle-btn{
-    /* block 세로로 보이게함 */
-    display: block;
-    background: url("../img/toggle-btn.svg");
-    width: 18px;
-    height: 24px;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    cursor: pointer;
-    text-indent: -9999px ;
-  }
-}
-
 
 
 

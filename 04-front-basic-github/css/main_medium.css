@@ -1,0 +1,167 @@
+/* MEDIA */
+/* header다음 .section이 왜 붙어서 해야 작동..?
+class속성으로 바로 붙어서 그런듯? */
+header.section .inner{
+  max-width: none;
+  height: auto;
+  padding: 0 20px;
+}
+
+header .menu-group,
+header .sign-group{
+  float:none;
+}
+
+header .logo{
+  padding: 12px 0;
+}
+
+header .menu-group{
+  display: block;
+}
+
+header .main-menu{
+  display: block;
+  margin-bottom: 10px;
+}
+
+header .main-menu li{
+  border-top: 1px solid #e5e5e5;
+}
+
+header .main-menu li a{
+  padding: 16px 0;
+}
+
+/* sign gruop(right) */
+
+header .sign-group{
+  display: block;
+  padding: 10px 0 20px;
+}
+
+header .btn-group{
+  display: block;
+}
+
+header .btn-group .btn{
+  justify-content: center;
+}
+
+header .btn-group .sign-in{
+  margin-right: 0;
+  margin-bottom: 12px;
+}
+
+#search-form{
+  margin-top: 12px;
+  margin-right: 0px;
+}
+
+#search{
+  width: 100%;
+  height: 42px;
+  text-align: center;
+}
+
+header .sub-menu{
+  margin-top: 12px;
+  margin-left: 0;
+  justify-content: center;
+}
+
+header .toggle{
+  display: none;
+}
+
+/* html에 on이라는 클래스 명은 없음. 마치 있는 것처럼 작동하게함. on은 보여줬다 안보여줬다 함 - js와 관련 */
+header .toggle.on{
+  display: block;
+}
+
+#toggle-btn{
+  /* block 세로로 보이게함 */
+  display: block;
+  background: url("../img/toggle-btn.svg");
+  width: 18px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  text-indent: -9999px ;
+}
+
+/* VISUAL */
+.section--visual{
+  background-image: url(../img/bg-small.jpg);
+}
+
+.section--visual .inner{
+  max-width: none;
+  padding: 80px 20px;
+  /* 세로 배치로 변경 */
+  display: block;
+}
+
+.section--visual .summary{
+  text-align: center;
+  margin-right: 0;
+  margin-bottom: 50px;
+}
+
+
+#sign-form{
+  width: auto;
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+
+/* FEATURE */
+.section--feature .summary{
+  /* 상 우 하 좌 - 시계방향 */
+  padding: 66px 20px 0 20px;
+}
+
+.section--feature .tiles li{
+  max-width: 50%;
+}
+
+/* 2번째 것만 조정함 */
+.section--feature .tiles li:nth-child(2){
+  border-right: none;
+}
+
+.section--feature .tiles li img{
+  padding: 14px 30% 24px;
+}
+
+/* WHERER IS GITHUB */
+.section--where-is .inner{
+  max-width: none;
+  padding: 80px 20px 0 20px;
+}
+
+/* PRICING CAED */
+.section--pricing .inner{
+  max-width: non;
+  padding: 80px 20px;
+}
+
+.section--pricing .card .cell2{
+  font-size: 20px;
+}
+
+/* FOOTER */
+footer .inner{
+  padding: 50px 20px;
+}
+
+footer .logo{
+  display: none;
+}
+
+
+
+

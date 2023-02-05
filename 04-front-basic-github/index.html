@@ -44,7 +44,9 @@
 
   <!-- 1) https://fonts.google.com/ 구글폰트 홈피를 사용한 link 와 css 속성 연결후 hello world 를 body안에 넣어 폰트체크--> 
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css"> 
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="(max-width:1024px)" href="css/main_medium.css">
+  <link rel="stylesheet" media="(max-width:768px)" href="css/main_small.css">
   <!-- js 링크를 body태그에 넣게되면 html의 코드가 먼저 돌아가기전에 script가 돌아감 -->
   <!-- defer는 순서를 따르되 js가 잘 돌아가게함 / 없을 경우 js실행따로 html 실행 따로 함-->
   <script defer src="js/main.js"></script>
